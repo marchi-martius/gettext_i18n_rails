@@ -15,7 +15,7 @@ module GettextI18nRails
           column_names.each do |attribute|
             translation = model.gettext_translation_for_attribute_name(attribute)
             context, *messages = translation.split('|')
-            f.puts("p_('{context}', '#{messages.join('|')}')")
+            f.puts("p_('#{context}', '#{messages.join('|')}')")
           end
         end
         f.puts "#DO NOT MODIFY! AUTOMATICALLY GENERATED FILE!"
